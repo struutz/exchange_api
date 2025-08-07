@@ -1,0 +1,21 @@
+[run]
+omit =
+    */__init__.py
+    app/interface/graphql/schema.py
+    app/interface/graphql/types/*
+    app/interface/graphql/queries/*
+    app/interface/graphql/mutations.py
+    app/infrastructure/logs/*
+    app/migrations/*
+    app/config/*
+    */__pycache__/*
+    */settings.py
+    */wsgi.py
+    */asgi.py
+
+[report]
+exclude_lines =
+    pragma: no cover
+    if __name__ == .__main__.:
+    raise NotImplementedError
+    pass

@@ -1,0 +1,33 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres:15
+    restart: always
+    environment:
+      POSTGRES_DB: local-tests
+      POSTGRES_USER: local
+      POSTGRES_PASSWORD: local1234
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  backend:
+    build: .
+    command: >
+      sh -c "python manage.py migrate &&
+             gunicorn exchange_api.wsgi:application --bind 0.0.0.0:8000"
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - postgres
+    environment:
+      - DJANGO_SETTINGS_MODULE=exchange_api.settings
+    env_file:
+      - .env
+
+volumes:
+  postgres_data:

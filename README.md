@@ -33,7 +33,12 @@ API para gerenciamento de transações com conversão de moedas, baseada em Djan
 
 ### 🔧 Configuração do ambiente
 
-1. Copie o arquivo de variáveis de ambiente:
+1. Copie o arquivo de variáveis de ambiente padrão para `.env`:
 
 ```bash
 cp .env.example .env
+
+make up
+make migrate
+make createsuperuser
+```

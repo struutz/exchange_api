@@ -17,7 +17,6 @@ API para gerenciamento de transações com conversão de moedas, baseada em Djan
 - [Strawberry GraphQL](https://strawberry.rocks/)
 - [PostgreSQL](https://www.postgresql.org/)
 - [Docker + Docker Compose](https://docs.docker.com/)
-- [TailwindCSS + Next.js (Frontend)](https://tailwindcss.com/)
 - Integração com: [ExchangeRatesAPI.io](https://exchangeratesapi.io/)
 
 ---
@@ -38,4 +37,3 @@ API para gerenciamento de transações com conversão de moedas, baseada em Djan
 
 ```bash
 cp .env.example .env
-# exchange_api

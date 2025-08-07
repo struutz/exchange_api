@@ -1,0 +1,50 @@
+mutation {
+  createTransaction(
+    amount: 250.75,
+    currency: "USD",
+    category: "Viagem",
+    date: "2025-08-07T15:00:00",
+    description: "Uber em viagem para São Paulo"
+  ) {
+    id
+    amount
+    currency
+    category
+    date
+    description
+  }
+}
+
+
+query {
+  allTransactions {
+    id
+    amount
+    currency
+    category
+    date
+    description
+  }
+}
+
+mutation {
+  updateTransaction(
+    transactionId: 1,
+    amount: 300.00,
+    currency: "EUR",
+    category: "Alimentação",
+    date: "2025-08-06T12:00:00",
+    description: "Jantar em restaurante italiano"
+  ) {
+    id
+    amount
+    currency
+    category
+    date
+    description
+  }
+}
+
+mutation {
+  deleteTransaction(transactionId: 1)
+}
